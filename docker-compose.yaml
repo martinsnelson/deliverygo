@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: simulator
+    volumes:
+      - .:/go/src/
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+  #zookeeper:
+  #  image: confluentinc/cp-zookeeper:latest
+  #  environment:
+  #   ZOOKEEPER_CLIENT_PORT: 2181
+  # extra_hosts:
+  #    - "host.docker.internal:172.17.0.1"
+  # kafka:
+  # image: confluentinc/cp-kafka:latest
+  # depends_on:
+  # - zookeeper
+  # ports:
+  # -
